@@ -1,0 +1,33 @@
+* {
+    padding: none;
+    margin: none;
+}
+
+/*main color for letters and borders*/
+:root {
+    --redColor: rgb(173, 39, 39); 
+}
+
+/*brick wall image used as the hero, background color added in case the image does not load.*/
+.background  {
+    background: url("../images/brick-wall-background.jpg");
+    background-color: lightslategray;
+    color: white;
+}
+
+#header {
+    opacity: 95%;
+}
+
+.siteName {
+    color: var(--redColor);
+}
+
+#searchBar {
+    padding: 0rem 7rem;
+}
+
+#searchBtn {
+    padding: 0rem 3rem;
+    background-color: var(--redColor);
+}

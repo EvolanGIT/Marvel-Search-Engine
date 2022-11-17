@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Marvel Search Engine</title>
+</head>
+
+<!-- Bulma has the unfortunate need to create divs on divs to work, I will comment anywhere you need to nest classes or IDs -->
+<!-- Please contact me if you have any doubts on where to assign any class. I will try to make this as clear as possible. -->
+<body class="background">
+    <!-- Navbar starts here-->
+    <nav id="header" class="navbar is-black" role="navigation" aria-label="main navigation">
+        <!-- Website logo, I will add a link to the repository later on. -->
+        <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="../assets/images/MCSE_logo_clean.png" style="max-height: 150px">
+        </a>
+        </div>
+        <!-- Website Name and Quote from Stan Lee -->
+        <div class="navbar-item">
+            <div class="block">
+            <p  class="title is-1 is-spaced siteName">-Marvel Comics Search Engine-</p>
+            <p class="title is-4">“The world has always been a comic book to me.”</p>
+            <p class="subtitle is-5">-Stan Lee.</p>
+            </div>
+        </div>
+        <!-- Search bar and search Button start here -->
+        <div class="navbar-end">
+          <div class="navbar-item">
+        <!-- search bar: Use the input to add any ID or class you need  -->
+            <input id="searchBar" class="input is-danger" type="text" placeholder="Character Search">
+        </div>
+        </div>
+        <div class="navbar-item">
+        <!-- search button: add any classes to the button on the class below.  -->
+            <button id="searchBtn" class="button is-danger">Search</button>
+        </div>
+    </nav>    
+</body>
+</html>
