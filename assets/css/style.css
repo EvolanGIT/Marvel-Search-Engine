@@ -31,3 +31,8 @@
     padding: 0rem 3rem;
     background-color: var(--redColor);
 }
+
+/*this adds margin to the cards container so they don't pile up*/
+.correction {
+    margin: 20px 0 10px 0;
+}
