@@ -36,3 +36,31 @@ const marvel = {
 };
 
 marvel.render();
+
+const rawg = {
+    render: () => {
+        const apiRawg = 'https://api.rawg.io/api/games?key=d5bbf27705f64c2bbfd9e4ce1a23cc6d&search=' + userSuperHero
+        let contentHTML = ''
+        console.log(apiRawg)
+        fetch(apiRawg)
+        .then(res => res.json())
+        .then((json) => {
+            console.log(json)
+            for (const game of json.results) {
+                let nameGame = game.name[0];
+                let platformGame = game.platforms[0].platform.name
+                let releaseGame = game.released
+                let urlGame = game.background_image
+                contentHTML += `
+                <div class="games-container">
+                    ${nameGame}
+                    ${platformGame}
+                    ${releaseGame}
+                    ${urlGame}
+                </div>
+                `
+            }
+        })
+    }
+}
+rawg.render();
