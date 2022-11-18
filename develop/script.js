@@ -5,7 +5,7 @@
 let userSuperHero = 'wolverine'
 
 
-const container = document.querySelector('.container');
+const container = document.querySelector('.containerHero');
 
 //call the marvel characters API
 const marvel = {

@@ -32,7 +32,41 @@
     background-color: var(--redColor);
 }
 
+#prevBtn {
+    padding: 0rem 3rem;
+    margin-right: 1.5rem;
+    border: 1px solid white;
+}
+
 /*this adds margin to the cards container so they don't pile up*/
 .correction {
     margin: 20px 0 10px 0;
+}
+
+.hero-container {
+    border: 3px solid var(--redColor);
+    padding: 20px;
+    font-size: large;
+    background: url(../images/old-paper.jpg);
+    color: white;
+}
+
+.img-thumbnail {
+    width: 15%; 
+    border: 3px solid black;
+}
+
+.Title {
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-decoration-thickness: 0.3rem;
+}
+
+.description {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: bolder;
+    font-style: italic;
 }
