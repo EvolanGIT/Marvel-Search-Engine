@@ -1,0 +1,4 @@
+apiMarvelPublickKey = '3042eb057dfaa11c5bd0effe0342eb13'
+apiMarvelPrivateKey = 'ef7b9db09cb50678ba73dc6be760139d5e922e18'
+apiMarvelEndpoint = 'http(s)://gateway.marvel.com/'
+hash=596a816a436a8e747d8ce364b9bcf758'
