@@ -61,7 +61,7 @@ const rawg = {
                 </div>
                 `
             }
-            container.innerHTML = contentHTML;
+            container.innerHTML = contentHTML
         })
     }
 }
