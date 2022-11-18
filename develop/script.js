@@ -16,6 +16,7 @@ const marvel = {
         fetch(apiCharactersMarvel)
         .then(res => res.json())
         .then((json) => {
+            console.log(json)
             for (const hero of json.data.results) {
                 let urlHero = hero.urls[0].url;
                 let heroId = hero.id
@@ -47,7 +48,7 @@ const rawg = {
         .then((json) => {
             console.log(json)
             for (const game of json.results) {
-                let nameGame = game.name[0];
+                let nameGame = game.name;
                 let platformGame = game.platforms[0].platform.name
                 let releaseGame = game.released
                 let urlGame = game.background_image
@@ -60,6 +61,7 @@ const rawg = {
                 </div>
                 `
             }
+            container.innerHTML = contentHTML;
         })
     }
 }
