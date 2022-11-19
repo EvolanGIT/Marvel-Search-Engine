@@ -81,7 +81,7 @@ const rawg = {
 rawg.render();
 
 //Function for Hero Search
-function hendleSearch() {
+function handleSearch() {
     console.log("handleSearch");
     var userSearch = searchBarEl.value;
     console.log(userSearch);
