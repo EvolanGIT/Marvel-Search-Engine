@@ -86,7 +86,7 @@ function hendleSearch() {
     var userSearch = searchBarEl.value;
     console.log(userSearch);
     userSuperHero = userSearch;
-    marvel.render;
-    rawg.render;
+    marvel.render();
+    rawg.render();
 }
 searchBtnEl.addEventListener("click", handleSearch);
