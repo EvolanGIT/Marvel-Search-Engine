@@ -16,6 +16,7 @@ const marvel = {
         fetch(apiCharactersMarvel)
         .then(res => res.json())
         .then((json) => {
+            console.log(json)
             for (const hero of json.data.results) {
                 let urlHero = hero.urls[0].url;
                 let heroId = hero.id
@@ -47,19 +48,31 @@ const rawg = {
         .then((json) => {
             console.log(json)
             for (const game of json.results) {
-                let nameGame = game.name[0];
+                let nameGame = game.name;
                 let platformGame = game.platforms[0].platform.name
                 let releaseGame = game.released
                 let urlGame = game.background_image
+                let scoreGame = game.score
                 contentHTML += `
-                <div class="games-container">
-                    ${nameGame}
-                    ${platformGame}
-                    ${releaseGame}
-                    ${urlGame}
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="${urlGame}" alt="${nameGame}">
+                    </figure>
                 </div>
+                <div class="card-content">
+                    <div class="media-content">
+                        <p class="title is-4">${nameGame}</p>
+                        <p class="subtitle is-6">${platformGame} Release Date: ${releaseGame}</p>
+                    </div>
+                    <div class="content">
+                        Overall Score = "${scoreGame}"
+                    </div>
+                </div>
+            </div>
                 `
             }
+            container.innerHTML = contentHTML
         })
     }
 }
