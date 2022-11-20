@@ -1,11 +1,13 @@
 //Users enters a super hero name
-
+var searchBarEl = document.querySelector("#searchBar");
+var searchBtnEl = document.querySelector("#searchBtn");
 
 // Harcoded to wolverine, but this should be an event listener to whatever the user clicks
 let userSuperHero = 'wolverine'
 
 
 const container = document.querySelector('.containerHero');
+const containerHeroInfo = document.querySelector('.containerHeroInfo');
 
 //call the marvel characters API
 const marvel = {
@@ -72,8 +74,19 @@ const rawg = {
             </div>
                 `
             }
-            container.innerHTML = contentHTML
+            containerHeroInfo.innerHTML = contentHTML
         })
     }
 }
 rawg.render();
+
+//Function for Hero Search
+function handleSearch() {
+    console.log("handleSearch");
+    var userSearch = searchBarEl.value;
+    console.log(userSearch);
+    userSuperHero = userSearch;
+    marvel.render();
+    rawg.render();
+}
+searchBtnEl.addEventListener("click", handleSearch);
