@@ -23,14 +23,20 @@ const marvel = {
                 let urlHero = hero.urls[0].url;
                 let heroId = hero.id
                 contentHTML += `
-                <div class="hero-container">
+                <figure class="media-left ">
+                <div class="image is-128x128">
                     <a href="${urlHero}" target="_blank">
-                        <img src="${hero.thumbnail.path}.${hero.thumbnail.extension}" alt="${hero.name}" class="img-thumbnail">
+                    <img src="${hero.thumbnail.path}.${hero.thumbnail.extension}" alt="${hero.name}" class="img-thumbnail">
                     </a>
-                    <h2 class="Title">${hero.name}</h2>
-                    <h3>${heroId}</h3>
-                    <p class="description">${hero.description}</p>
-                <div>
+                </div>
+                </figure>
+                <div class="media-content">
+                <div class="content has-text-black">
+                    <h1 class="content has-text-white is-underlined is-bolder">${hero.name}</h1>
+                    <h4>Id no.${heroId}</h4>
+                    <p class="content has-text-white has-text-weight-semibold is-italic">${hero.description}</p>
+                </div>
+                </div>
                 `
             }
             container.innerHTML = contentHTML;
@@ -42,7 +48,7 @@ marvel.render();
 
 const rawg = {
     render: () => {
-        const apiRawg = 'https://api.rawg.io/api/games?key=d5bbf27705f64c2bbfd9e4ce1a23cc6d&search=' + userSuperHero
+        const apiRawg = 'https://api.rawg.io/api/games?key=d5bbf27705f64c2bbfd9e4ce1a23cc6d&page_size=5&search_precise=true&search=' + userSuperHero
         let contentHTML = ''
         console.log(apiRawg)
         fetch(apiRawg)
@@ -56,22 +62,18 @@ const rawg = {
                 let urlGame = game.background_image
                 let scoreGame = game.score
                 contentHTML += `
-            <div class="card">
-                <div class="card-image">
-                    <figure class="image is-4by3">
+                    <article class="column containerCards notification is-black">
+                        <div class="content">
+                        <figure class="image is-square">
                         <img src="${urlGame}" alt="${nameGame}">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media-content">
-                        <p class="title is-4">${nameGame}</p>
-                        <p class="subtitle is-6">${platformGame} Release Date: ${releaseGame}</p>
-                    </div>
-                    <div class="content">
+                        </figure>
+                        </div>         
+                        <div class="content">
+                        <p class="content is-size-4">${nameGame}</p>
+                        <p class="content is-size-6">${platformGame} Release Date: ${releaseGame}</p>
                         Overall Score = "${scoreGame}"
-                    </div>
-                </div>
-            </div>
+                        </div>
+                    </article>
                 `
             }
             containerHeroInfo.innerHTML = contentHTML
