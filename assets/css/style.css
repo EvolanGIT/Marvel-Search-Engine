@@ -10,8 +10,7 @@
 
 /*brick wall image used as the hero, background color added in case the image does not load.*/
 .background  {
-    background: url("../images/brick-wall-background.jpg");
-    background-color: lightslategray;
+    background-color: rgb(29, 30, 31);
     color: white;
 }
 
@@ -47,26 +46,24 @@
     border: 3px solid var(--redColor);
     padding: 20px;
     font-size: large;
-    background: url(../images/old-paper.jpg);
+    /* background: url(../images/old-paper.jpg); */
     color: white;
+    margin-bottom: 30px;
+    border-radius: 8px;
 }
 
-.img-thumbnail {
-    width: 15%; 
-    border: 3px solid black;
+.img-thumbnail { 
+    border: 3px solid rgb(0, 0, 0);
 }
 
-.Title {
-    color: black;
-    font-size: 2rem;
-    font-weight: bolder;
-    text-decoration: underline;
-    text-decoration-thickness: 0.3rem;
+
+.containerCards {
+    border-radius: 10px;
+    margin: 4rem;
+    text-align: center;
+    opacity: 93%;
 }
 
-.description {
-    font-size: 1.5rem;
-    color: black;
-    font-weight: bolder;
-    font-style: italic;
+.gameImg {
+    height: 100%;
 }
