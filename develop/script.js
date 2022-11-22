@@ -1,7 +1,7 @@
 //Users enters a super hero name
 var searchBarEl = document.querySelector("#searchBar");
 var searchBtnEl = document.querySelector("#searchBtn");
-
+var header = $('#header')
 // Harcoded to wolverine, but this should be an event listener to whatever the user clicks
 let userSuperHero = 'wolverine'
 
@@ -83,12 +83,34 @@ const rawg = {
 rawg.render();
 
 //Function for Hero Search
-function handleSearch() {
+function handleSearch(storedBtnValue) {
     console.log("handleSearch");
     var userSearch = searchBarEl.value;
     console.log(userSearch);
-    userSuperHero = userSearch;
+    userSuperHero = userSearch || storedBtnValue;
     marvel.render();
     rawg.render();
+    localStorage.setItem('storedHero',userSearch)
+    renderButtons()
 }
 searchBtnEl.addEventListener("click", handleSearch);
+
+header.on('click',function (event){
+    if (!event.target.matches('.recentSearch')) return
+    let storedBtnValue = event.target.innerHTML
+    handleSearch(storedBtnValue)
+})
+// let storedHero = JSON.parse(localStorage.getItem("storedHero")) || []
+
+function renderButtons () {
+    let storedHero = localStorage.getItem('storedHero')
+      let buttonHistory = $('<button>').html(storedHero).attr('id',storedHero).addClass('recentSearch')
+      header.append(buttonHistory)
+
+  }
+
+// function recentSearch (event) {
+//     if (!event.target.matches('.recentSearch')) return
+//     let storedBtnValue = event.target.innerHTML
+//     handleSearch(storedBtnValue)
+// } 
