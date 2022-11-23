@@ -2,6 +2,8 @@
 var searchBarEl = document.querySelector("#searchBar");
 var searchBtnEl = document.querySelector("#searchBtn");
 var header = $('#header')
+var prevBtnEl = ("prevBtn")
+var heroListEl = $("#created-btn")
 // Harcoded to wolverine, but this should be an event listener to whatever the user clicks
 let userSuperHero = 'wolverine'
 
@@ -16,13 +18,13 @@ const marvel = {
         console.log(apiCharactersMarvel)
         let contentHTML = ''
         fetch(apiCharactersMarvel)
-        .then(res => res.json())
-        .then((json) => {
-            console.log(json)
-            for (const hero of json.data.results) {
-                let urlHero = hero.urls[0].url;
-                let heroId = hero.id
-                contentHTML += `
+            .then(res => res.json())
+            .then((json) => {
+                console.log(json)
+                for (const hero of json.data.results) {
+                    let urlHero = hero.urls[0].url;
+                    let heroId = hero.id
+                    contentHTML += `
                 <figure class="media-left ">
                 <div class="image is-128x128">
                     <a href="${urlHero}" target="_blank">
@@ -38,9 +40,9 @@ const marvel = {
                 </div>
                 </div>
                 `
-            }
-            container.innerHTML = contentHTML;
-        })
+                }
+                container.innerHTML = contentHTML;
+            })
     }
 };
 
@@ -52,16 +54,16 @@ const rawg = {
         let contentHTML = ''
         console.log(apiRawg)
         fetch(apiRawg)
-        .then(res => res.json())
-        .then((json) => {
-            console.log(json)
-            for (const game of json.results) {
-                let nameGame = game.name;
-                let platformGame = game.platforms[0].platform.name
-                let releaseGame = game.released
-                let urlGame = game.background_image
-                let scoreGame = game.score
-                contentHTML += `
+            .then(res => res.json())
+            .then((json) => {
+                console.log(json)
+                for (const game of json.results) {
+                    let nameGame = game.name;
+                    let platformGame = game.platforms[0].platform.name
+                    let releaseGame = game.released
+                    let urlGame = game.background_image
+                    let scoreGame = game.score
+                    contentHTML += `
                     <article class="column containerCards notification is-black m-3">
                         <div class="content">
                         <figure class="image is-3by2">
@@ -75,9 +77,9 @@ const rawg = {
                         </div>
                     </article>
                 `
-            }
-            containerHeroInfo.innerHTML = contentHTML
-        })
+                }
+                containerHeroInfo.innerHTML = contentHTML
+            })
     }
 }
 rawg.render();
@@ -86,28 +88,39 @@ rawg.render();
 function handleSearch(storedBtnValue) {
     console.log("handleSearch");
     var userSearch = searchBarEl.value;
+    var storedHeroes = JSON.parse(localStorage.getItem('storedHeroes')) || []
     console.log(userSearch);
     userSuperHero = userSearch || storedBtnValue;
     marvel.render();
     rawg.render();
-    localStorage.setItem('storedHero',userSearch)
+    storedHeroes.push(userSearch)
+    localStorage.setItem('storedHeroes', JSON.stringify(storedHeroes))
     renderButtons()
 }
 searchBtnEl.addEventListener("click", handleSearch);
 
-header.on('click',function (event){
+header.on('click', function (event) {
     if (!event.target.matches('.recentSearch')) return
     let storedBtnValue = event.target.innerHTML
     handleSearch(storedBtnValue)
 })
-// let storedHero = JSON.parse(localStorage.getItem("storedHero")) || []
+// let storedHeroes = JSON.parse(localStorage.getItem("storedHeroes")) || []
 
-function renderButtons () {
-    let storedHero = localStorage.getItem('storedHero')
-      let buttonHistory = $('<button>').html(storedHero).attr('id',storedHero).addClass('recentSearch')
-      header.append(buttonHistory)
+function renderButtons() {
+    let storedHeroes = JSON.parse(localStorage.getItem('storedHeroes')) || []
+    if (storedHeroes.length === 0) return
+    heroListEl.empty()
+    for (var i = 0; i < storedHeroes.length; i++) {
+        let buttonHistory = $('<button>').html(storedHeroes[i]).attr('id', storedHeroes[i]).addClass('recentSearch')
+        heroListEl.append(buttonHistory)
+    }
+}
 
-  }
+function goBack() {
+    let storedHeroes = localStorage.getItem('storedHeroes')
+    let goBack = history.go(-1)
+}
+renderButtons()
 
 // function recentSearch (event) {
 //     if (!event.target.matches('.recentSearch')) return
