@@ -10,8 +10,7 @@
 
 /*brick wall image used as the hero, background color added in case the image does not load.*/
 .background  {
-    background: url("../images/brick-wall-background.jpg");
-    background-color: lightslategray;
+    background-color: rgb(29, 30, 31);
     color: white;
 }
 
@@ -32,7 +31,46 @@
     background-color: var(--redColor);
 }
 
+#prevBtn {
+    padding: 0rem 3rem;
+    margin-right: 1.5rem;
+    border: 1px solid white;
+}
+
 /*this adds margin to the cards container so they don't pile up*/
 .correction {
     margin: 20px 0 10px 0;
+}
+
+.hero-container {
+    border: 3px solid var(--redColor);
+    padding: 20px;
+    font-size: large;
+    /* background: url(../images/old-paper.jpg); */
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.img-thumbnail { 
+    border: 3px solid rgb(0, 0, 0);
+}
+
+
+.containerCards {
+    border-radius: 10px;
+    margin: 4rem;
+    text-align: center;
+    opacity: 93%;
+}
+
+.gameImg {
+    height: 100%;
+}
+
+#footer {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }

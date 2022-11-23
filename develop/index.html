@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<div class="container">
-</div>
-</body>
-<script src="./script.js"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,122 +12,72 @@
 <!-- Bulma has the unfortunate need to create divs on divs to work, I will comment anywhere you need to nest classes or IDs -->
 <!-- Please contact me if you have any doubts on where to assign any class. I will try to make this as clear as possible. -->
 <!-- This library creates classes and subclasses for it's content, i know it looks like a lot but once you understand this part.
-      please bring any doubts about design to me or if you find anything too complicated to work so we can fix it. -->
-<body class="background">
+  please bring any doubts about design to me or if you find anything too complicated to work so we can fix it. -->
+  <body class="background">
     <!-- Navbar starts here-->
     <nav id="header" class="navbar is-black" role="navigation" aria-label="main navigation">
-        <!-- Website logo, I will add a link to the repository later on. -->
-        <div class="navbar-brand">
+      <!-- Website logo, I will add a link to the repository later on. -->
+      <div class="navbar-brand">
         <a class="navbar-item">
-            <img src="../assets/images/MCSE_logo_clean.png" style="max-height: 150px">
+          <img src="../assets/images/MCSE_logo_clean.png" style="max-height: 150px">
         </a>
+      </div>
+      <!-- Website Name and Quote from Stan Lee -->
+      <div class="navbar-item">
+        <div class="block">
+          <p  class="title is-1 is-spaced siteName">-Marvel Comics Search Engine-</p>
+          <p class="title is-4">“The world has always been a comic book to me.”</p>
+          <p class="subtitle is-5">-Stan Lee.</p>
         </div>
-        <!-- Website Name and Quote from Stan Lee -->
+      </div>
+      <!-- Search bar and search Button start here -->
+      <div class="navbar-end">
         <div class="navbar-item">
-            <div class="block">
-            <p  class="title is-1 is-spaced siteName">-Marvel Comics Search Engine-</p>
-            <p class="title is-4">“The world has always been a comic book to me.”</p>
-            <p class="subtitle is-5">-Stan Lee.</p>
-            </div>
+          <button id="prevBtn" class="button is-black">Previous Search</button>
+          <!-- search bar: Use the input to add any ID or class you need  -->
+          <input id="searchBar" class="input is-danger" type="text" placeholder="Character Search">
+          <div id="created-btn"></div>
         </div>
-        <!-- Search bar and search Button start here -->
-        <div class="navbar-end">
-          <div class="navbar-item">
-        <!-- search bar: Use the input to add any ID or class you need  -->
-            <input id="searchBar" class="input is-danger" type="text" placeholder="Character Search">
-        </div>
-        </div>
-        <div class="navbar-item">
+      </div>
+      <div class="navbar-item">
         <!-- search button: add any classes to the button on the class below.  -->
-            <button id="searchBtn" class="button is-danger">Search</button>
+          <button id="searchBtn" class="button is-danger">Find my Character</button>
         </div>
-    </nav>
-
-    <!-- to make the content created by bulma more easily readable, i will leave a space between elements, commenting as I did above. -->
-    <!-- this is the background image -->
-    <main>
-    <section class="hero is-fullheight">
-      <div class="correction" class="hero-top">
-        <!-- the container class here centers the element horizontally, the card class is what gives it the styling -->
-        <div class="container">
-          <div class="card">
-            
-            <!-- this article element holds the comic image, comic title and text placeholder for the first piece of information -->
-            <article class="media">
-                  <figure class="media-left">
-                    <p class="image is-128x128">
-                      <img src="https://bulma.io/images/placeholders/128x128.png">
-                    </p>
-                  </figure>
-                  <!-- comic title and text placeholder, to target the placeholder use the p element, to target the title target strong -->
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>Comic Title</strong>
-                        <br>
-                        Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo feugiat.
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              
-              <!-- this article is where the information for the FIRST character would be, it contains a placeholder image, a title and text placeholder -->
-              <article class="media">
-                  <figure class="media-left">
-                    <p class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>Hero no.1</strong>
-                        <br>
-                        Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo feugiat.
-                      </p>
-                    </div>
-                  </div>
-                </article>
-
-                <!-- this article is where the information for the SECOND character would be, it contains a placeholder image, a title and text placeholder -->
-                <article class="media">
-                  <figure class="media-left">
-                    <p class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>Hero no.2</strong>
-                        <br>
-                        Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis leo feugiat.
-                      </p>
-                    </div>
-                  </div>
-                </article>
-
-                <!-- this article is where the information for the THIRD character would be, it contains a placeholder image, a title and text placeholder -->
-                <article class="media">
-                  <figure class="media-left">
-                    <p class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>Hero no.3 </strong>
-                        <br>
-                        Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
-                      </p>
-                    </div>
-                  </div>
-                </article>
-          </div>
-          </div>
+      </nav>
+      
+      
+      <!-- to make the content created by bulma more easily readable, i will leave a space between elements, commenting as I did above. -->
+      <!-- this is the background image -->
+      <main>
+    <section class="hero is-fullheight-with-navbar">
+          <div class="correction" class="hero-body">
+            <!-- the container class here centers the element horizontally, the card class is what gives it the styling -->
+            <div class="container box has-background-black">
+              <article class="media hero-container containerHero mb-0">
+          </article>
+        </div>
+      </div>
+      <h1 class="container box has-text-white has-background-black is-size-1 is-family-monospace"> Here are some Videogames you might like </h1>
+      <div class="columns containerHeroInfo">
       </div>
     </section>    
-    </main>    
+  </main>    
+  <!-- Script for Jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
+    <footer class="mt-6">
+      <div id="footer">
+        <h2>Github</h2>
+        <p>For any questions</p>
+        <a href="https://github.com/EvolanGIT">EvolanGIT    </a>
+        <a href="https://github.com/nosbeto">nosbeto    </a>
+        <a href="https://github.com/Gavin-Pomphrey">Gavin-Pomphrey    </a>
+        <a href="https://github.com/buloko">buloko    </a>
+        <a href="https://github.com/nbhsbg53">nbhsbg53    </a>
+        <p>copyright &copy;2022</p>
+      </div>
+        </div>
+      </div>
+  </footer>
 </body>
 </html>
