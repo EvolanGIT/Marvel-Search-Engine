@@ -62,16 +62,16 @@ const rawg = {
                 let urlGame = game.background_image
                 let scoreGame = game.score
                 contentHTML += `
-                    <article class="column containerCards notification is-black">
+                    <article class="column containerCards notification is-black m-3">
                         <div class="content">
-                        <figure class="image is-square">
+                        <figure class="image is-3by2">
                         <img src="${urlGame}" alt="${nameGame}">
                         </figure>
                         </div>         
                         <div class="content">
-                        <p class="content is-size-4">${nameGame}</p>
-                        <p class="content is-size-6">${platformGame} Release Date: ${releaseGame}</p>
-                        Overall Score = "${scoreGame}"
+                        <p class="content is-size-4 mb-6">${nameGame}</p>
+                        <p class="content is-size-6">Platform: ${platformGame} <br> Release Date: ${releaseGame}</p>
+                        Overall Score = ${scoreGame}
                         </div>
                     </article>
                 `
