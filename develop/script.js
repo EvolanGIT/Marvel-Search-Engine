@@ -100,6 +100,8 @@ function handleSearch(storedBtnValue) {
 }
 searchBtnEl.addEventListener("click", handleSearch);
 
+
+//Ben Work on this 
 function handleSearch2(storedBtnValue) {
     console.log("handleSearch");
     var userSearch = searchBarEl.value;
