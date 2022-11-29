@@ -2,7 +2,6 @@
 var searchBarEl = document.querySelector("#searchBar");
 var searchBtnEl = document.querySelector("#searchBtn");
 var header = $('#header')
-var prevBtnEl = ("prevBtn")
 var heroListEl = $("#created-btn")
 // Harcoded to wolverine, but this should be an event listener to whatever the user clicks
 let userSuperHero = 'wolverine'
@@ -132,14 +131,16 @@ function renderButtons() {
     }
 }
 
-function goBack() {
-    let storedHeroes = localStorage.getItem('storedHeroes')
-    let goBack = history.go(-1)
-}
-renderButtons()
 
-// function recentSearch (event) {
-//     if (!event.target.matches('.recentSearch')) return
-//     let storedBtnValue = event.target.innerHTML
-//     handleSearch(storedBtnValue)
-// } 
+$(document).ready(function(){
+    $(".modal").addClass("is-active");
+
+    $("#closeBtn").click(function() {
+    $(".modal").removeClass("is-active");
+});
+
+    $("#modalBtn").click(function() {
+    $(".modal").addClass("is-active");
+});
+
+});
