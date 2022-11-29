@@ -30,14 +30,14 @@ Search Engine designed to provide information about Marvel Universe as well as v
 
 ## Access
 
-- The link to the Github repository: 
-- Link to the launched website: 
+- The link to the Github repository: https://github.com/EvolanGIT/Marvel-Search-Engine
+- Link to the launched website: https://evolangit.github.io/Marvel-Search-Engine/
 
 ## Visuals
 
 This is the screenshot of the full-size website featuring a character's infocard and the associated games.
     
-![alt fullsite]()
+![alt fullsite](./assets/images/fullsiteScreenshot.jpg)
     
 
 ## Credits (in alphabetical order)
@@ -60,8 +60,8 @@ Copyright (c) [2022] [Yonatan Yael Bermudez Diez]
 
 ## Features
 
-- "Previous Search" button to access past searches.
 - Up to 5 games featured from any console.
+- Official Character's information from Marvel Comics database.
 
 ## How to Contribute
 
