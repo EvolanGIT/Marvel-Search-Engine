@@ -128,7 +128,7 @@ function renderButtons() {
     if (storedHeroes.length === 0) return
     heroListEl.empty()
     for (var i = 0; i < storedHeroes.length; i++) {
-        let buttonHistory = $('<button>').html(storedHeroes[i]).attr('id', storedHeroes[i]).addClass('recentSearch')
+        let buttonHistory = $('<button class="searched">').html(storedHeroes[i]).attr('id', storedHeroes[i]).addClass('recentSearch')
         heroListEl.append(buttonHistory)
     }
 }
