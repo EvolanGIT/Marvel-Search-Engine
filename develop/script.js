@@ -109,6 +109,8 @@ function handleSearch2(storedBtnValue) {
     userSuperHero = userSearch || storedBtnValue;
     marvel.render();
     rawg.render();
+    heroListEl.empty();
+    storedHeroes.splice(userSearch)
     localStorage.setItem('storedHeroes', JSON.stringify(storedHeroes))
     renderButtons()
 }
