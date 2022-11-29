@@ -93,16 +93,32 @@ function handleSearch(storedBtnValue) {
     userSuperHero = userSearch || storedBtnValue;
     marvel.render();
     rawg.render();
+    heroListEl.empty();
     storedHeroes.push(userSearch)
     localStorage.setItem('storedHeroes', JSON.stringify(storedHeroes))
     renderButtons()
 }
 searchBtnEl.addEventListener("click", handleSearch);
 
+
+//Ben Work on this 
+function handleSearch2(storedBtnValue) {
+    console.log("handleSearch");
+    var userSearch = searchBarEl.value;
+    var storedHeroes = JSON.parse(localStorage.getItem('storedHeroes')) || []
+    console.log(userSearch);
+    userSuperHero = userSearch || storedBtnValue;
+    marvel.render();
+    rawg.render();
+    localStorage.setItem('storedHeroes', JSON.stringify(storedHeroes))
+    renderButtons()
+}
+
+
 header.on('click', function (event) {
     if (!event.target.matches('.recentSearch')) return
     let storedBtnValue = event.target.innerHTML
-    handleSearch(storedBtnValue)
+    handleSearch2(storedBtnValue)
 })
 // let storedHeroes = JSON.parse(localStorage.getItem("storedHeroes")) || []
 
