@@ -2,8 +2,11 @@
 var searchBarEl = document.querySelector("#searchBar");
 var searchBtnEl = document.querySelector("#searchBtn");
 var header = $('#header')
+<<<<<<< HEAD
+=======
 var prevBtnEl = ("prevBtn")
 var heroListEl = $("#created-btn")
+>>>>>>> 6aa47e8f9c6c85e0ead7e960859240683df2bd60
 // Harcoded to wolverine, but this should be an event listener to whatever the user clicks
 let userSuperHero = 'wolverine'
 
@@ -18,6 +21,15 @@ const marvel = {
         console.log(apiCharactersMarvel)
         let contentHTML = ''
         fetch(apiCharactersMarvel)
+<<<<<<< HEAD
+        .then(res => res.json())
+        .then((json) => {
+            console.log(json)
+            for (const hero of json.data.results) {
+                let urlHero = hero.urls[0].url;
+                let heroId = hero.id
+                contentHTML += `
+=======
             .then(res => res.json())
             .then((json) => {
                 console.log(json)
@@ -25,6 +37,7 @@ const marvel = {
                     let urlHero = hero.urls[0].url;
                     let heroId = hero.id
                     contentHTML += `
+>>>>>>> 6aa47e8f9c6c85e0ead7e960859240683df2bd60
                 <figure class="media-left ">
                 <div class="image is-128x128">
                     <a href="${urlHero}" target="_blank">
@@ -54,6 +67,18 @@ const rawg = {
         let contentHTML = ''
         console.log(apiRawg)
         fetch(apiRawg)
+<<<<<<< HEAD
+        .then(res => res.json())
+        .then((json) => {
+            console.log(json)
+            for (const game of json.results) {
+                let nameGame = game.name;
+                let platformGame = game.platforms[0].platform.name
+                let releaseGame = game.released
+                let urlGame = game.background_image
+                let scoreGame = game.score
+                contentHTML += `
+=======
             .then(res => res.json())
             .then((json) => {
                 console.log(json)
@@ -64,6 +89,7 @@ const rawg = {
                     let urlGame = game.background_image
                     let scoreGame = game.score
                     contentHTML += `
+>>>>>>> 6aa47e8f9c6c85e0ead7e960859240683df2bd60
                     <article class="column containerCards notification is-black m-3">
                         <div class="content">
                         <figure class="image is-3by2">
@@ -77,9 +103,15 @@ const rawg = {
                         </div>
                     </article>
                 `
+<<<<<<< HEAD
+            }
+            containerHeroInfo.innerHTML = contentHTML
+        })
+=======
                 }
                 containerHeroInfo.innerHTML = contentHTML
             })
+>>>>>>> 6aa47e8f9c6c85e0ead7e960859240683df2bd60
     }
 }
 rawg.render();
@@ -88,22 +120,43 @@ rawg.render();
 function handleSearch(storedBtnValue) {
     console.log("handleSearch");
     var userSearch = searchBarEl.value;
+<<<<<<< HEAD
+=======
     var storedHeroes = JSON.parse(localStorage.getItem('storedHeroes')) || []
+>>>>>>> 6aa47e8f9c6c85e0ead7e960859240683df2bd60
     console.log(userSearch);
     userSuperHero = userSearch || storedBtnValue;
     marvel.render();
     rawg.render();
+<<<<<<< HEAD
+    localStorage.setItem('storedHero',userSearch)
+=======
     storedHeroes.push(userSearch)
     localStorage.setItem('storedHeroes', JSON.stringify(storedHeroes))
+>>>>>>> 6aa47e8f9c6c85e0ead7e960859240683df2bd60
     renderButtons()
 }
 searchBtnEl.addEventListener("click", handleSearch);
 
+<<<<<<< HEAD
+header.on('click',function (event){
+=======
 header.on('click', function (event) {
+>>>>>>> 6aa47e8f9c6c85e0ead7e960859240683df2bd60
     if (!event.target.matches('.recentSearch')) return
     let storedBtnValue = event.target.innerHTML
     handleSearch(storedBtnValue)
 })
+<<<<<<< HEAD
+// let storedHero = JSON.parse(localStorage.getItem("storedHero")) || []
+
+function renderButtons () {
+    let storedHero = localStorage.getItem('storedHero')
+      let buttonHistory = $('<button>').html(storedHero).attr('id',storedHero).addClass('recentSearch')
+      header.append(buttonHistory)
+
+  }
+=======
 // let storedHeroes = JSON.parse(localStorage.getItem("storedHeroes")) || []
 
 function renderButtons() {
@@ -121,9 +174,14 @@ function goBack() {
     let goBack = history.go(-1)
 }
 renderButtons()
+>>>>>>> 6aa47e8f9c6c85e0ead7e960859240683df2bd60
 
 // function recentSearch (event) {
 //     if (!event.target.matches('.recentSearch')) return
 //     let storedBtnValue = event.target.innerHTML
 //     handleSearch(storedBtnValue)
+<<<<<<< HEAD
 // } 
+=======
+// } 
+>>>>>>> 6aa47e8f9c6c85e0ead7e960859240683df2bd60
