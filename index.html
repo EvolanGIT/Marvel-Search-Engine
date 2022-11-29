@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Marvel Search Engine</title>
+</head>
+
+<!-- Bulma has the unfortunate need to create divs on divs to work, I will comment anywhere you need to nest classes or IDs -->
+<!-- Please contact me if you have any doubts on where to assign any class. I will try to make this as clear as possible. -->
+<!-- This library creates classes and subclasses for it's content, i know it looks like a lot but once you understand this part.
+  please bring any doubts about design to me or if you find anything too complicated to work so we can fix it. -->
+  <body class="background">
+    <!-- Navbar starts here-->
+    <nav id="header" class="navbar is-black" role="navigation" aria-label="main navigation">
+      <!-- Website logo, I will add a link to the repository later on. -->
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="../assets/images/MCSE_logo_clean.png" style="max-height: 150px">
+        </a>
+      </div>
+      <!-- Website Name and Quote from Stan Lee -->
+      <div class="navbar-item">
+        <div class="block">
+          <p  class="title is-1 is-spaced siteName">-Marvel Comics Search Engine-</p>
+          <p class="title is-4">“The world has always been a comic book to me.”</p>
+          <p class="subtitle is-5">-Stan Lee.</p>
+        </div>
+      </div>
+      <!-- Search bar and search Button start here -->
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <button id="modalBtn" id="popUpBtn"  class="button is-black">How to Use this Site.</button>
+          <!-- search bar: Use the input to add any ID or class you need  -->
+          <input id="searchBar" class="input is-danger" type="text" placeholder="Character Search">
+          <div id="created-btn"></div>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <!-- search button: add any classes to the button on the class below.  -->
+          <button id="searchBtn" class="button is-danger">Find my Character</button>
+        </div>
+      </nav>
+      
+      
+      <!-- to make the content created by bulma more easily readable, i will leave a space between elements, commenting as I did above. -->
+      <!-- this is the background image -->
+      <main>
+    <section class="hero is-fullheight-with-navbar">
+          <div class="correction" class="hero-body">
+            <!-- the container class here centers the element horizontally, the card class is what gives it the styling -->
+            <div class="container box has-background-black">
+              <article class="media hero-container containerHero mb-0">
+          </article>
+        </div>
+      </div>
+      <h1 class="container box has-text-white has-background-black is-size-1 is-family-monospace"> Here are some Videogames you might like </h1>
+      <div class="columns containerHeroInfo">
+      </div>
+    </section>    
+  </main>    
+  <!-- Script for Jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
+  <footer  class="mt-6">
+      <div id="footer"> 
+        <h2>Github</h2>
+        <p>For any questions</p>
+        <a href="https://github.com/EvolanGIT">EvolanGIT    </a>
+        <a href="https://github.com/nosbeto">nosbeto    </a>
+        <a href="https://github.com/Gavin-Pomphrey">Gavin-Pomphrey    </a>
+        <a href="https://github.com/buloko">buloko    </a>
+        <a href="https://github.com/nbhsbg53">nbhsbg53    </a>
+        <p>copyright &copy;2022</p>
+      </div>
+        </div>
+      </div>
+  </footer>
+
+  <!-- modal -->
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title has-text-weight-bold">Thanks for visiting the marvel Comics Search Engine.</p>
+      </header>
+      <section class="modal-card-body">
+      <p class="title is-size-4 has-text-weight-semibold">How to use this Site:</p>
+      <p class="subtitle is-size-5 is-italic">In order for your experience to be the best, keep in mind the following suggestions:</p>
+      <ol type="I" class="is-size-5 has-text-black p-5">
+        <li>Search for characters that belong to the Marvel Universe.</li>
+        <li>Some characters might have not appeared in games yet, so keep in mind the suggestions are limited to their appearance.</li>
+        <li>If your search did not throw a result, or it's incomplete, please e-mail us at <a class="is-italic is-underlined">suggestions_MCSU@hotmail.com</a>.</li>
+      </ol>  
+      </section>
+      <footer class="modal-card-foot is-justify-content-end">
+        <button  class="button is-danger" id="closeBtn" aria-label="close">CLOSE</button>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
