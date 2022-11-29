@@ -42,8 +42,8 @@ This is the screenshot of the full-size website featuring a character's infocard
 
 ## Credits (in alphabetical order)
 
-- Beto de Armas (ajdearmas13@gmail.com)
 - Benjamin Uloko (buloko8@gmail.com)
+- Beto de Armas (ajdearmas13@gmail.com)
 - Brandon Grady (nbhsbg53@hotmail.com)
 - Gabin Pomphrey (gpomphrey25@gmail.com)
 - Yonatan Bermudez (yon_baermund@hotmail.com)
